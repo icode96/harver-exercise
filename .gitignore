@@ -1,0 +1,11 @@
+.history
+.vscode
+
+node_modules
+
+task_1.log
+task_2.log
+task_3__step_1.log
+task_3__step_2.log
+task_4__step_1.log
+task_4__step_2.log
