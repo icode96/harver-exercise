@@ -4,6 +4,14 @@ const { getRandomWordSync, getRandomWord } = require('word-maker');
 const mockArray = [...Array(101).keys()].slice(1);
 
 /**
+ * @function getFizzBuzzText - Compute FizzBuzz text
+ * @param {number} counter
+ * @returns {string}
+ */
+const getFizzBuzzText = (counter) =>
+  `${counter % 3 === 0 ? 'Fizz' : ''}${counter % 5 === 0 ? 'Buzz' : ''}`;
+
+/**
  * @function logResult - Write give dataset to external file in the rool
  * @param {string} fileName - file name to be written
  * @param {Array} dataset - dataset to be written to file
@@ -63,10 +71,7 @@ const getDisplayTextSync = ({
   let text = undefined;
 
   if (withFizzBuzz) {
-    const fizz = counter % 3 === 0 ? 'Fizz' : '';
-    const buzz = counter % 5 === 0 ? 'Buzz' : '';
-
-    text = `${fizz}${buzz}`;
+    text = getFizzBuzzText(counter);
   }
 
   try {
@@ -90,10 +95,7 @@ const getDisplayText = async ({
   let text = undefined;
 
   if (withFizzBuzz) {
-    const fizz = counter % 3 === 0 ? 'Fizz' : '';
-    const buzz = counter % 5 === 0 ? 'Buzz' : '';
-
-    text = `${fizz}${buzz}`;
+    text = getFizzBuzzText(counter);
   }
 
   try {
